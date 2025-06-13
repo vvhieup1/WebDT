@@ -61,23 +61,25 @@
 </div>
 <script>
     document.getElementById('clearCartBtn').addEventListener('click', function() {
-        fetch('', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: 'clear=true', 
-        .then(response => {
-            if (response.ok) {
-                location.reload();
-            } else {
-                console.error('Failed to clear cart');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
+    fetch('', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: 'clear=true'
+    })
+    .then(response => {
+        if (response.ok) {
+            location.reload();
+        } else {
+            console.error('Failed to clear cart');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
     });
+});
+
     document.addEventListener('DOMContentLoaded', function() {
         var quantityButtons = document.querySelectorAll('.quantity-btn');
 
